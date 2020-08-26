@@ -2,7 +2,7 @@ package com.company.leetcode;
 
 import com.company.leetcode.add_two_numbers.AddTwoNumbers;
 import com.company.leetcode.add_two_numbers.ListNode;
-import com.company.leetcode.longest_palindromic_substring.Solution;
+import com.company.leetcode.reverse_integer.Solution;
 import com.company.leetcode.two_sum.TwoSum;
 
 import java.util.Arrays;
@@ -50,5 +50,13 @@ public class Main {
 ////        String s = "ababcddcbcae";
 //        Solution solution = new Solution();
 //        System.out.println(solution.longestPalindrome(s));
+
+        Solution solution = new Solution();
+        System.out.println(solution.reverse(1534236469));
+        System.out.println(solution.reverse(-2147483647));
+        System.out.println(solution.reverse(-1563847412));
+        System.out.println(solution.reverse(120));
+        System.out.println(solution.reverse(-123));
+        System.out.println(solution.reverse(0));
     }
 }
