@@ -55,4 +55,20 @@ public class Solution {
 
         return resultNode;
     }
+
+    public ListNode mergeTwoListsRecursive(ListNode first, ListNode second) {
+        if (first == null) {
+            return second;
+        }
+        if (second == null) {
+            return first;
+        }
+        if (first.val < second.val) {
+            first.next = mergeTwoListsRecursive(first.next, second);
+            return first;
+        } else {
+            second.next = mergeTwoListsRecursive(first, second.next);
+            return second;
+        }
+    }
 }
