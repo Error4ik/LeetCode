@@ -9,14 +9,16 @@ public class Solution {
             return 2;
         }
 
-        int[] arr = new int[n];
-        arr[0] = 1;
-        arr[1] = 2;
+        int a = 1;
+        int b = 2;
+        int c = 0;
 
         for (int i = 2; i < n; i++) {
-            arr[i] = arr[i - 1] + arr[i - 2];
+           c = a + b;
+           a = b;
+           b = c;
         }
 
-        return arr[n - 1];
+        return c;
     }
 }
