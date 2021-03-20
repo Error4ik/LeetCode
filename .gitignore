@@ -33,3 +33,4 @@ build/
 .vscode/
 /log/**
 /out/**
+/src/com/company/leetcode/Main.java
