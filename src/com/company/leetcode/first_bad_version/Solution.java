@@ -1,7 +1,5 @@
 package com.company.leetcode.first_bad_version;
 
-import com.company.leetcode.Main.VersionControl;
-
 public class Solution extends VersionControl {
     public int firstBadVersion(int n) {
         int start = 1;
