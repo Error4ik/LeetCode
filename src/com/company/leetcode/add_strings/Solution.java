@@ -1,31 +1,25 @@
 package com.company.leetcode.add_strings;
 
-
-import java.math.BigInteger;
-
 public class Solution {
     public String addStrings(String num1, String num2) {
         StringBuilder sb = new StringBuilder();
 
-        int firstIndex = num1.length() - 1;
-        int secondIndex = num2.length() - 1;
-        int remains = 0;
+        int one = num1.length() - 1;
+        int two = num2.length() - 1;
+        int carry = 0;
 
-        while (firstIndex >= 0 || secondIndex >= 0) {
-            int a = firstIndex >= 0 ? num1.charAt(firstIndex) - 48 : 0;
-            int b = secondIndex >= 0 ? num2.charAt(secondIndex) - 48 : 0;
+        while (one >= 0 || two >= 0) {
+            int a = one >= 0 ? num1.charAt(one--) - '0' : 0;
+            int b = two >= 0 ? num2.charAt(two--) - '0' : 0;
 
-            int result = (a + b + remains) % 10;
-            remains = (a + b + remains) / 10;
+            int sum = (a + b + carry) % 10;
+            carry = (a + b + carry) / 10;
 
-            sb.append(result);
-
-            firstIndex--;
-            secondIndex--;
+            sb.append(sum);
         }
 
-        if (remains != 0) {
-            sb.append(remains);
+        if (carry != 0) {
+            sb.append(carry);
         }
 
         return sb.reverse().toString();
