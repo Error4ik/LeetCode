@@ -1,21 +1,19 @@
 package com.company.leetcode.find_all_numbers_disappeared_in_an_array;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Solution {
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        Set<Integer> set = new HashSet<>();
+        boolean[] flags = new boolean[nums.length + 1];
         for (int num : nums) {
-            set.add(num);
+            flags[num] = true;
         }
+
         List<Integer> list = new ArrayList<>();
 
-        for (int i = 0; i < nums.length; i++) {
-            if (!set.contains(i + 1)) {
-                list.add(i + 1);
+        for (int i = 1; i < flags.length; i++) {
+            if (!flags[i]) {
+                list.add(i);
             }
         }
 
