@@ -10,7 +10,7 @@ public class Solution {
             if (!list.contains(num)) {
                 list.add(num);
             } else {
-                list.remove(new Integer(num));
+                list.remove(Integer.valueOf(num));
             }
         }
         return list.get(0);
